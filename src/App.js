@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-ingrain-background relative">
+    <div className="min-h-screen bg-ingrain-color-cream relative">
       <Router>
         <Navbar />
         <div className="pt-0">

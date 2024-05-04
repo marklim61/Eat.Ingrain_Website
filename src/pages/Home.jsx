@@ -28,13 +28,13 @@ const Home = () => {
           onMouseEnter={() => setShowPopup1(true)}
           onMouseLeave={() => setShowPopup1(false)}
           >
-          <div className="bg-white block w-full p-44 rounded-lg shadow-lg opacity-0 hover:opacity-0">
-            Card 1
+          <div className="bg-ingrain-color-blue block w-full p-44 rounded-lg shadow-lg opacity-10 hover:opacity-0">
+            
           </div>
           {showPopup1 && (
             <div className="absolute -top-1/3 bottom-0 left-1/4 -translate-x-1/2 flex justify-center items-center">
               <NavLink to="/about">
-                <div className="bg-white p-6 rounded-lg shadow-lg text-center cursor-pointer">
+                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
                   <h1 className="text-2xl font-semibold mb-2">About Us</h1>
                 </div>
               </NavLink>
@@ -48,13 +48,13 @@ const Home = () => {
           onMouseEnter={() => setShowPopup2(true)}
           onMouseLeave={() => setShowPopup2(false)}
           >
-          <div className="bg-white block w-full p-44 rounded-lg shadow-lg opacity-0 hover:opacity-0">
-            Card 2
+          <div className="bg-ingrain-color-blue block w-full p-44 rounded-lg shadow-lg opacity-10 hover:opacity-0">
+            
           </div>
           {showPopup2 && (
             <div className="absolute -top-1/3 bottom-1 right-1/5 -translate-x-1/4 flex justify-center items-center">
               <NavLink to="/events">
-                <div className="bg-white p-6 rounded-lg shadow-lg text-center cursor-pointer">
+                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
                   <h1 className="text-2xl font-semibold mb-2">Events</h1>
                 </div>
               </NavLink>
@@ -68,13 +68,13 @@ const Home = () => {
           onMouseEnter={() => setShowPopup3(true)}
           onMouseLeave={() => setShowPopup3(false)}
           >
-          <div className="bg-white w-full p-44 rounded-lg shadow-lg opacity-0 hover:opacity-0">
-            Card 3
+          <div className="bg-ingrain-color-blue w-full p-44 rounded-lg shadow-lg opacity-10 hover:opacity-0">
+            
           </div>
           {showPopup3 && (
             <div className="absolute top-1/2 bottom-1 left-1/4 -translate-x-1/2 flex justify-center items-center">
               <NavLink to="/shop">
-                <div className="bg-white p-6 rounded-lg shadow-lg text-center cursor-pointer">
+                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
                   <h1 className="text-2xl font-semibold mb-2">Shop</h1>
                 </div>
               </NavLink>
@@ -88,13 +88,13 @@ const Home = () => {
           onMouseEnter={() => setShowPopup4(true)}
           onMouseLeave={() => setShowPopup4(false)}
           >
-          <div className="bg-white w-full p-44 rounded-lg shadow-lg opacity-0 hover:opacity-0">
-            Card 4
+          <div className="bg-ingrain-color-blue w-full p-44 rounded-lg shadow-lg opacity-10 hover:opacity-0">
+            
           </div>
           {showPopup4 && (
             <div className="absolute top-1/2 bottom-1 right-1/5 -translate-x-1/4 flex justify-center items-center">
               <NavLink to="/contact">
-                <div className="bg-white p-6 rounded-lg shadow-lg text-center cursor-pointer">
+                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
                   <h1 className="text-2xl font-semibold mb-2">Contact Us</h1>
                 </div>
               </NavLink>
