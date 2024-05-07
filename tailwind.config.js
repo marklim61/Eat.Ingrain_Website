@@ -18,8 +18,8 @@ module.exports = {
       'bermuda': '#78dcca',
       'ingrain-color-cream': '#FAEED7',
       'ingrain-color-orange': '#F16B36',
-      'ingrain-color-green': '#36F16B',
-      'ingrain-color-blue': '#6B36F1'
+      'ingrain-color-green': '#227238',
+      'ingrain-color-blue': '#0B93F6'
     },
   },
   plugins: [],
