@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Style.css'; // Import CSS file for styling
 import emailjs from 'emailjs-com';
 
+const {REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY} = process.env
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,20 +17,23 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log("Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
+    console.log("Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+    console.log("Public Key:", process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
     
-    try {
-      await emailjs.sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_USER_ID
-      );
-      console.log('Email sent successfully');
-      // Add code here to show a success message or redirect the user
-    } catch (error) {
-      console.error('Failed to send email:', error);
-      // Add code here to show an error message to the user
-    }
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      e.target,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        // You can add code here to show a success message or redirect the user
+      }, (error) => {
+        console.error('Failed to send email:', error);
+        // You can add code here to show an error message to the user
+      });
 
     // Clear the form after submission
     setFormData({
