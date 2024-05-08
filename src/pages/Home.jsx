@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import grainy from '../assets/logo-mark-ingrain-4.jpg'
 import { NavLink } from 'react-router-dom'
+import SpeechBubble from '../components/SpeechBubble'
 
 const Home = () => {
   const [showPopup1, setShowPopup1] = useState(false)
@@ -53,12 +54,22 @@ const Home = () => {
           <div className="bg-ingrain-color-blue block w-full p-44 rounded-lg shadow-lg opacity-0 hover:opacity-0">
             
           </div>
-          {showPopup2 && (
+          { /* Working Hover */}
+          {/* {showPopup2 && (
             <div className="absolute -top-1/3 bottom-1 right-1/5 -translate-x-1/4 flex justify-center items-center">
               <NavLink to="/events">
                 <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
                   <h1 className="text-2xl font-semibold mb-2 text-white">Events</h1>
                 </div>
+              </NavLink>
+            </div>
+          )} */}
+
+          { /* Adding a speech bubble */}
+          {showPopup2 && (
+            <div className="absolute -top-12 bottom-1/3 right-1/5 -translate-x-12 flex justify-center items-center">
+              <NavLink to="/events">
+                <SpeechBubble rotation={0} text="Events"/>
               </NavLink>
             </div>
           )}
