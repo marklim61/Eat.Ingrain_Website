@@ -5,10 +5,10 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-ingrain-color-cream relative">
+    <div className="min-h-screen bg-ingrain-color-background">
       <Router>
         <Navbar />
-        <div className="pt-0">
+        <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

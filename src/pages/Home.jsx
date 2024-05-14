@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import grainy from '../assets/logo-mark-ingrain-4.jpg'
+import transparentGrainy from '../assets/transparentGrainy.png'
 import { NavLink } from 'react-router-dom'
 import SpeechBubble from '../components/SpeechBubble'
 
@@ -11,15 +11,15 @@ const Home = () => {
 
   return (
     // Put everything in a container
-    <div className="relative min-h-screen w-screen flex justify-center items-center">
+    <div className="relative min-h-screen w-screen flex justify-center items-center bg-ingrain-color-background">
 
       {/* Center grainy */}
       <div className="absolute inset-0 justify-center flex items-center h-screen w-screen"> 
         <img 
-          src={grainy} 
+          src={transparentGrainy} 
           alt="Character" 
           width={600} 
-          className="pointer-events-none" />
+          className="pointer-events-none bg-ingrain-color-background" />
       </div>
 
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full mt-16 gap-6">
