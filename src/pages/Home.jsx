@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import transparentGrainy from '../assets/transparentGrainy2.png'
+import grainy from '../assets/transparentGrainy2.png'
 import { NavLink } from 'react-router-dom'
-import SpeechBubble from '../components/SpeechBubble'
+// import SpeechBubble from '../components/SpeechBubble'
+import './speechbubble2.css'
 
 const Home = () => {
   const [showPopup1, setShowPopup1] = useState(false)
@@ -16,7 +17,7 @@ const Home = () => {
       {/* Center grainy */}
       <div className="absolute inset-0 justify-center flex items-center h-screen w-screen"> 
         <img 
-          src={transparentGrainy} 
+          src={grainy} 
           alt="Character" 
           width={600} 
           className="pointer-events-none bg-ingrain-color-background" />
@@ -33,13 +34,18 @@ const Home = () => {
           
           </div>
           {showPopup1 && (
-            <div 
-              className="absolute -top-1/3 bottom-0 left-1/4 -translate-x-1/2 flex justify-center items-center">
-              <NavLink to="/about">
-                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
-                  <h1 className="text-2xl font-semibold mb-2 text-white">About Us</h1>
+            // <div 
+            //   className="absolute -top-1/3 bottom-0 left-1/4 -translate-x-1/2 flex justify-center items-center">
+            //   <NavLink to="/about">
+            //     <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
+            //       <h1 className="text-2xl font-semibold mb-2 text-white">About Us</h1>
                   
-                </div>
+            //     </div>
+            //   </NavLink>
+            // </div>
+            <div className='absolute h-screen flex justify-center items-center left-1/4 -translate-x-1/4'>
+              <NavLink to="/about">
+                <p className='speech-bubble aesthet_nova top-left-tail'>About Us</p>
               </NavLink>
             </div>
           )}
@@ -67,9 +73,14 @@ const Home = () => {
 
           { /* Adding a speech bubble */}
           {showPopup2 && (
-            <div className="absolute -top-12 bottom-1/3 right-1/5 -translate-x-12 flex justify-center items-center">
+            // <div className="absolute -top-12 bottom-1/3 right-1/5 -translate-x-12 flex justify-center items-center">
+            //   <NavLink to="/events">
+            //     <SpeechBubble rotation={0} text="Events"/>
+            //   </NavLink>
+            // </div>
+            <div className='absolute h-screen flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/events">
-                <SpeechBubble rotation={0} text="Events"/>
+                <p className='speech-bubble aesthet_nova top-right-tail'>Events</p>
               </NavLink>
             </div>
           )}
@@ -85,11 +96,16 @@ const Home = () => {
             
           </div>
           {showPopup3 && (
-            <div className="absolute top-1/2 bottom-1 left-1/4 -translate-x-1/2 flex justify-center items-center">
+            // <div className="absolute top-1/2 bottom-1 left-1/4 -translate-x-1/2 flex justify-center items-center">
+            //   <NavLink to="/shop">
+            //     <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
+            //       <h1 className="text-2xl font-semibold mb-2 text-white">Shop</h1>
+            //     </div>
+            //   </NavLink>
+            // </div>
+            <div className='absolute flex justify-center items-center left-1/4 translate-x-1/5'>
               <NavLink to="/shop">
-                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
-                  <h1 className="text-2xl font-semibold mb-2 text-white">Shop</h1>
-                </div>
+                <p className='speech-bubble aesthet_nova bottom-left-tail'>Shop</p>
               </NavLink>
             </div>
           )}
@@ -105,11 +121,16 @@ const Home = () => {
             
           </div>
           {showPopup4 && (
-            <div className="absolute top-1/2 bottom-1 right-1/5 -translate-x-1/4 flex justify-center items-center">
+            // <div className="absolute top-1/2 bottom-1 right-1/5 -translate-x-1/4 flex justify-center items-center">
+            //   <NavLink to="/contact">
+            //     <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
+            //       <h1 className="text-2xl font-semibold mb-2 text-white">Contact Us</h1>
+            //     </div>
+            //   </NavLink>
+            // </div>
+            <div className='absolute flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/contact">
-                <div className="bg-ingrain-color-blue p-6 rounded-lg shadow-lg text-center cursor-pointer">
-                  <h1 className="text-2xl font-semibold mb-2 text-white">Contact Us</h1>
-                </div>
+                <p className='speech-bubble aesthet_nova bottom-right-tail'>Contact Us</p>
               </NavLink>
             </div>
           )}

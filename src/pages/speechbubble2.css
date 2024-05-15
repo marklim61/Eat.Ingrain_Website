@@ -2,17 +2,18 @@
   transform: translatey(0px);
   animation: float 5s ease-in-out infinite;
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: bold;
   letter-spacing: 3px;
-  font-size: 15px;
+  font-size: 30px;
   color: #774f38;
-  background-color: #ece5ce;
-  padding: 50px;
-  border-radius: 11px;
+  /* background-color: #ece5ce; */
+  background-color: #f9cdad;
+  padding: 90px;
+  border-radius: 40px;
   position: relative;
   box-shadow: 20px 20px #83af9b;
-  font-family: "Baloo 2", cursive;
+  /* font-family: "Aesthet Nova", cursive; */
 }
 
 /* .speech-bubble:after {
@@ -37,7 +38,7 @@
   z-index: -2;
 } */
 
-.speech-bubble.top-right-tail:after {
+.speech-bubble.top-left-tail:after {
   transform: translatey(0px);
   animation: float2 5s ease-in-out infinite;
   content: ".";
@@ -59,7 +60,7 @@
   z-index: -2;
 }
 
-.speech-bubble.top-left-tail:after {
+.speech-bubble.top-right-tail:after {
   transform: translatey(0px);
   animation: float2 5s ease-in-out infinite;
   content: ".";
@@ -165,4 +166,10 @@
     line-height: 30px;
     transform: translatey(0px);
  }
+}
+
+.aesthet_nova {
+  font-family: aesthet-nova, serif;
+  font-style: normal;
+  font-weight: 700;
 }

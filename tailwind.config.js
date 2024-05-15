@@ -16,7 +16,7 @@ module.exports = {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
-      'ingrain-color-background': '#f9cdad',
+      'ingrain-color-background': '#faeed7',
       'ingrain-color-orange': '#F16B36',
       'ingrain-color-green': '#227238',
       'ingrain-color-blue': '#0B93F6'
