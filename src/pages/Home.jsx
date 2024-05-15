@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import transparentGrainy from '../assets/transparentGrainy.png'
+import transparentGrainy from '../assets/transparentGrainy2.png'
 import { NavLink } from 'react-router-dom'
 import SpeechBubble from '../components/SpeechBubble'
 

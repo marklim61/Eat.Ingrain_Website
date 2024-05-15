@@ -1,26 +1,10 @@
-import React, { useState } from 'react'
-import SpeechBubble from '../components/SpeechBubble'
-import { NavLink } from 'react-router-dom'
+import React from 'react'
+import './speechbubble2.css'
 
 const Events = () => {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
-    <div 
-      className="flex justify-center items-center h-screen"
-      onMouseEnter={() => setIsHovered(true)} 
-      onMouseLeave={() => setIsHovered(false)}
-      >
-      {/* Example 1: Top-Right Speech bubble */}
-      {isHovered && <SpeechBubble rotation={0} text="Top-Right" />}
-      <NavLink
-        to="/"
-        className="container"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        Hover over me
-      </NavLink>
+    <div className='relative h-screen flex justify-center items-center'>
+      <p className='speech-bubble bottom-right-tail'>Event</p>
     </div>
   )
 }
