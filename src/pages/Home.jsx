@@ -130,7 +130,7 @@ const Home = () => {
             // </div>
             <div className='absolute flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/contact">
-                <p className='speech-bubble aesthet_nova bottom-right-tail'>Contact Us</p>
+                <p className='speech-bubble aesthet_nova bottom-right-tail'>Contact</p>
               </NavLink>
             </div>
           )}

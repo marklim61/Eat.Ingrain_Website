@@ -22,6 +22,12 @@ module.exports = {
       'ingrain-color-blue': '#0B93F6'
     },
   },
-  plugins: [require('daisyui'),],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/typography'),
+  ],
+  daisyui: {
+    themes: [],
+  },
 }
 
