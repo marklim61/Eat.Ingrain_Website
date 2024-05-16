@@ -22,6 +22,6 @@ module.exports = {
       'ingrain-color-blue': '#0B93F6'
     },
   },
-  plugins: [],
+  plugins: [require('daisyui'),],
 }
 

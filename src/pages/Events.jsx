@@ -1,5 +1,4 @@
 import React from 'react'
-import './speechbubble2.css'
 
 const Events = () => {
   return (

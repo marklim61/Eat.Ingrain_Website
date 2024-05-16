@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import grainy from '../assets/transparentGrainy2.png'
 import { NavLink } from 'react-router-dom'
 // import SpeechBubble from '../components/SpeechBubble'
-import './speechbubble2.css'
+import './speechbubble.css'
 
 const Home = () => {
   const [showPopup1, setShowPopup1] = useState(false)
