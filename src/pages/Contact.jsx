@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './Style.css'; // Import CSS file for styling
 import emailjs from 'emailjs-com';
 
-const {REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY} = process.env
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,7 +13,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log("Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
@@ -51,7 +49,6 @@ const Contact = () => {
         width="400"
         className="pointer-events-none spinning" // Add spinning class
       />
-      
       {/* Contact form overlay */}
       <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-75">
         <div className="bg-white bg-opacity-50 p-8 rounded-lg"> {/* Adjust the opacity here */}
