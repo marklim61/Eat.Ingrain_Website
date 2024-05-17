@@ -1,16 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import ingrain_Logo from '../assets/transparentINGRAIN.png'
 
 const Navbar = () => {
   return (
-    // Fixed so the home page would not overlap the navbar
-    <header className='fixed top-0 left-0 right-0 z-50 py-5 w-full font-bold text-ingrain-color-orange bg-ingrain-color-green font-san'>
-      <nav className="flex justify-center items-center">
-        <ul>
-        <li><NavLink to="/" className="text-4xl">INGRAIN</NavLink></li>
-      </ul>
-      </nav>
-    </header>
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 pt-8">
+        <NavLink to="/">
+          <img src={ingrain_Logo} alt="Logo" className="h-32 cursor-pointer" />
+        </NavLink>
+      </div>
   )
 }
 

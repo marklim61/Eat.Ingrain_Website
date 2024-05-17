@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Style.css'; // Import CSS file for styling
 import emailjs from 'emailjs-com';
+import grainy from '../assets/transparentGrainy2.png'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,10 +16,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log("Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
-    console.log("Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
-    console.log("Public Key:", process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
     
     emailjs.sendForm(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -44,14 +41,14 @@ const Contact = () => {
   return (
     <div className="absolute inset-0 flex justify-end items-start h-screen w-screen">
       <img 
-        src="/static/media/logo-mark-ingrain-4.e650692a23e98b4fb4a2.jpg"
+        src={grainy}
         alt="Character"
         width="400"
         className="pointer-events-none spinning" // Add spinning class
       />
       {/* Contact form overlay */}
       <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-75">
-        <div className="bg-white bg-opacity-50 p-8 rounded-lg"> {/* Adjust the opacity here */}
+        <div className="bg-white bg-opacity-50 p-12 rounded-lg"> {/* Adjust the opacity here */}
           <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
           
           {/* Form */}

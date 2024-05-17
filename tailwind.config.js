@@ -16,12 +16,18 @@ module.exports = {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
-      'ingrain-color-cream': '#FAEED7',
+      'ingrain-color-background': '#faeed7',
       'ingrain-color-orange': '#F16B36',
       'ingrain-color-green': '#227238',
       'ingrain-color-blue': '#0B93F6'
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/typography'),
+  ],
+  daisyui: {
+    themes: [],
+  },
 }
 
