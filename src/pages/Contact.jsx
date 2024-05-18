@@ -11,10 +11,10 @@ const Contact = () => {
     email: '',
     message: ''
   });
-  
-  // Update the state to handle whether the form is submitted successfully:
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPopup, setShowPopup] = useState(false); // State to toggle speech bubble
+  const [grainyStopped, setGrainyStopped] = useState(false); // State to track grainy animation
 
   // Function to handle changes in form fields
   const handleChange = (e) => {
@@ -22,44 +22,51 @@ const Contact = () => {
   };
 
   // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    if (isSubmitting) return; // Prevent multiple submissions
+
     setIsSubmitting(true);
+    setGrainyStopped(true); // Stop the animation on submit
+    setShowPopup(true); // Show the popup on submit
 
     // Sending form data via emailjs
-    emailjs.sendForm(
+    emailjs.send(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      e.target,
+      formData,
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     ).then((result) => {
       console.log('Email sent successfully:', result.text);
       setIsSubmitting(false);
-      setShowPopup(true); // Set showPopup to true on successful submission
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
 
       // Hide the popup after 3 seconds
       setTimeout(() => {
         setShowPopup(false);
+        setGrainyStopped(false); // Restart the animation after hiding the popup
       }, 3000);
 
     }, (error) => {
       console.error('Failed to send email:', error);
       setIsSubmitting(false);
-    });
 
-    // Clearing the form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
+      // Hide the popup after 3 seconds even if there's an error
+      setTimeout(() => {
+        setShowPopup(false);
+        setGrainyStopped(false); // Restart the animation after hiding the popup
+      }, 3000);
     });
   };
 
   return (
     // Main container for the contact form
-    <div className="contact-container h-screen flex items-center justify-center bg-ingrain-color-background">
+    <div className="contact-container absolute flex items-center justify-end bg-ingrain-color-background">
       {/* Background section */}
-      <div className="background-section absolute inset-0 pointer-events-none flex items-end justify-end">
+      <div className={`background-section absolute inset-0 pointer-events-none flex items-end justify-end ${grainyStopped ? 'grainy-stopped' : ''}`}>
         {/* Background image */}
         <img 
           src={grainy}
@@ -69,9 +76,9 @@ const Contact = () => {
         />
         {/* Speech bubble */}
         {showPopup && (
-          <div className="relative flex bottom-0 mb-10">
+          <div className="background-container absolute" style={{ top: '35%', right: '25%'}}>
             <NavLink to="/confirmation">
-              <p className="speech-popup top-right-tail aesthet_nova bottom-tail">Message Sent!</p>
+              <p className="speech-popup top-left-tail aesthet_nova">Message Sent!</p>
             </NavLink>
           </div>
         )}
@@ -81,7 +88,7 @@ const Contact = () => {
         {/* Form title */}
         <h2 className="text-2xl font-bold mb-6 text-center text-ingrain-color-orange">Contact Us</h2>
         {/* Contact form */}
-        <form onSubmit={handleSubmit}>
+        <form>
           {/* Name input field */}
           <div className="mb-4">
             <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="name">
@@ -130,7 +137,8 @@ const Contact = () => {
           {/* Submit button */}
           <div className="flex items-center justify-between">
             <button
-              type="submit"
+              type="button"
+              onMouseEnter={handleSubmit}
               className="bg-ingrain-color-orange hover:bg-ingrain-color-green text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Send Message
