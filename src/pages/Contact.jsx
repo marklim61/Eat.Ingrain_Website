@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import './Style.css'; // Import CSS file for styling
 import emailjs from 'emailjs-com';
-import grainy from '../assets/transparentGrainy2.png'
+import grainy from '../assets/transparentGrainy2.png';
+import { NavLink } from 'react-router-dom'; // Import NavLink for routing
+import './Style.css'; // Importing the CSS file
+import './speechbubble.css'; // Importing additional CSS file
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,28 +11,43 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  
+  // Update the state to handle whether the form is submitted successfully:
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPopup, setShowPopup] = useState(false); // State to toggle speech bubble
 
+  // Function to handle changes in form fields
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    setIsSubmitting(true);
+
+    // Sending form data via emailjs
     emailjs.sendForm(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       e.target,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
-      .then((result) => {
-        console.log('Email sent successfully:', result.text);
-        // You can add code here to show a success message or redirect the user
-      }, (error) => {
-        console.error('Failed to send email:', error);
-        // You can add code here to show an error message to the user
-      });
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    ).then((result) => {
+      console.log('Email sent successfully:', result.text);
+      setIsSubmitting(false);
+      setShowPopup(true); // Set showPopup to true on successful submission
 
-    // Clear the form after submission
+      // Hide the popup after 3 seconds
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
+
+    }, (error) => {
+      console.error('Failed to send email:', error);
+      setIsSubmitting(false);
+    });
+
+    // Clearing the form fields after submission
     setFormData({
       name: '',
       email: '',
@@ -39,42 +56,87 @@ const Contact = () => {
   };
 
   return (
-    <div className="absolute inset-0 flex justify-end items-start h-screen w-screen">
-      <img 
-        src={grainy}
-        alt="Character"
-        width="400"
-        className="pointer-events-none spinning" // Add spinning class
-      />
-      {/* Contact form overlay */}
-      <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-75">
-        <div className="bg-white bg-opacity-50 p-12 rounded-lg"> {/* Adjust the opacity here */}
-          <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-          
-          {/* Form */}
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700">Name:</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="border-gray-300 border w-full p-2 rounded-md" />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="border-gray-300 border w-full p-2 rounded-md" />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700">Message:</label>
-              <textarea id="message" name="message" rows="4" value={formData.message} onChange={handleChange} className="border-gray-300 border w-full p-2 rounded-md"></textarea>
-            </div>
-            
-            {/* Physical button */}
-            <button type="submit" className="flex items-center bg-transparent border-none p-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
-                <rect width="200" height="50" rx="25" fill="#f26a36" />
-                <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="20">Submit</text>
-              </svg>
+    // Main container for the contact form
+    <div className="contact-container h-screen flex items-center justify-center bg-ingrain-color-background">
+      {/* Background section */}
+      <div className="background-section absolute inset-0 pointer-events-none flex items-end justify-end">
+        {/* Background image */}
+        <img 
+          src={grainy}
+          alt="Character"
+          width="400"
+          className={`pointer-events-none ${isSubmitting ? '' : 'animate-spin-slow'}`} // Stopping animation if submitting
+        />
+        {/* Speech bubble */}
+        {showPopup && (
+          <div className="relative flex bottom-0 mb-10">
+            <NavLink to="/confirmation">
+              <p className="speech-popup top-right-tail aesthet_nova bottom-tail">Message Sent!</p>
+            </NavLink>
+          </div>
+        )}
+      </div>
+      {/* Form section */}
+      <div className="form-section relative p-8 rounded shadow-md w-full max-w-md bg-ingrain-color-background">
+        {/* Form title */}
+        <h2 className="text-2xl font-bold mb-6 text-center text-ingrain-color-orange">Contact Us</h2>
+        {/* Contact form */}
+        <form onSubmit={handleSubmit}>
+          {/* Name input field */}
+          <div className="mb-4">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="name">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+          {/* Email input field */}
+          <div className="mb-4">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+          {/* Message input field */}
+          <div className="mb-6">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="message">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              rows="5"
+              required
+            />
+          </div>
+          {/* Submit button */}
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-ingrain-color-orange hover:bg-ingrain-color-green text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Send Message
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

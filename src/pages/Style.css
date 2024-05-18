@@ -1,15 +1,33 @@
-.spinning {
-    animation: spin 15s linear infinite; /* Adjust duration (5s) and timing function if needed */
-  }
-  
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.contact-container {
+  position: relative; /* Setting the container's position relative to its normal position */
+  justify-content: flex-start; /* Aligning items to the start (left) */
+  align-items: flex-end; /* Aligning items to the bottom */
+  height: 87vh; /* Setting the height of the container to 87% of the viewport height */
 }
 
-.aesthet_nova {
-  font-family: aesthet-nova, serif;
-  font-style: normal;
-  font-weight: 700;
-  /* font-size: 50px; */
+.form-section {
+  z-index: 2; /* Setting the stack order of the form section */
+  background-color: ingrain-background-color; /* Setting the background color of the form section */
+  margin-left: 100px; /* Adding margin on the left to move the container more towards the left */
+  padding: 20px; /* Adding padding inside the form section for better spacing */
+  width: 70%; /* Setting the width of the form section to 70% of its parent container */
 }
+
+.background-section {
+  z-index: 1; /* Setting the stack order of the background section */
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 87vh;
+  margin-right: 200px;
+}
+
+/* Animation styling */
+.animate-spin-slow {
+  animation: spin 3s linear infinite; /* Adding spinning animation to the image */
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); } /* Starting point of the rotation */
+  to { transform: rotate(360deg); } /* Ending point of the rotation */
+}
+
