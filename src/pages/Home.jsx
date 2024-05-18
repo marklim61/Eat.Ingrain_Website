@@ -43,9 +43,9 @@ const Home = () => {
             //     </div>
             //   </NavLink>
             // </div>
-            <div className='absolute h-screen flex justify-center items-center left-1/4 -translate-x-1/4'>
+            <div className='absolute h-screen flex justify-center items-center left-1/3 -translate-x-1/2'>
               <NavLink to="/about">
-                <p className='speech-bubble aesthet_nova top-left-tail'>About Us</p>
+                <p className='speech-bubble aesthet_nova top-left-tail uppercase'>About</p>
               </NavLink>
             </div>
           )}
@@ -80,7 +80,7 @@ const Home = () => {
             // </div>
             <div className='absolute h-screen flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/events">
-                <p className='speech-bubble aesthet_nova top-right-tail'>Events</p>
+                <p className='speech-bubble aesthet_nova top-right-tail uppercase'>Events</p>
               </NavLink>
             </div>
           )}
@@ -103,9 +103,9 @@ const Home = () => {
             //     </div>
             //   </NavLink>
             // </div>
-            <div className='absolute flex justify-center items-center left-1/4 translate-x-1/5'>
+            <div className='absolute flex justify-center items-center left-1/4 translate-x-1/4'>
               <NavLink to="/shop">
-                <p className='speech-bubble aesthet_nova bottom-left-tail'>Shop</p>
+                <p className='speech-bubble aesthet_nova bottom-left-tail uppercase'>Shop</p>
               </NavLink>
             </div>
           )}
@@ -130,7 +130,7 @@ const Home = () => {
             // </div>
             <div className='absolute flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/contact">
-                <p className='speech-bubble aesthet_nova bottom-right-tail'>Contact</p>
+                <p className='speech-bubble aesthet_nova bottom-right-tail uppercase'>Contact</p>
               </NavLink>
             </div>
           )}
