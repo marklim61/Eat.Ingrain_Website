@@ -31,3 +31,29 @@
   to { transform: rotate(360deg); } /* Ending point of the rotation */
 }
 
+.aesthet-nova-h1 {
+  font-family: aesthet-nova, serif;
+  font-style: normal;
+  font-weight: 900; 
+}
+
+.aesthet-nova-h3 {
+  font-family: aesthet-nova, serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
