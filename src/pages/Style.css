@@ -13,6 +13,12 @@
   width: 70%; /* Setting the width of the form section to 70% of its parent container */
 }
 
+/*
+make speech bubble inside containter
+make container position top right of grainy
+
+*/
+
 .background-section {
   z-index: 1; /* Setting the stack order of the background section */
   justify-content: flex-end;
@@ -20,15 +26,18 @@
   height: 87vh;
   margin-right: 200px;
 }
-
 /* Animation styling */
 .animate-spin-slow {
-  animation: spin 3s linear infinite; /* Adding spinning animation to the image */
+  animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); } /* Starting point of the rotation */
-  to { transform: rotate(360deg); } /* Ending point of the rotation */
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .aesthet-nova-h1 {
