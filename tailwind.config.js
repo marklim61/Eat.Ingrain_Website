@@ -19,7 +19,8 @@ module.exports = {
       'ingrain-color-background': '#F9CDAD',
       'ingrain-color-orange': '#F16B36',
       'ingrain-color-green': '#227238',
-      'ingrain-color-blue': '#0B93F6'
+      'ingrain-color-blue': '#0B93F6',
+      'ingrain-board-color': '#ECE5CE'
     },
   },
   plugins: [

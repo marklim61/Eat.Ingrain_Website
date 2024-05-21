@@ -40,16 +40,24 @@ make container position top right of grainy
   }
 }
 
+.aesthet-nova {
+  font-family: aesthet-nova, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: xx-large;
+}
+
 .aesthet-nova-h1 {
   font-family: aesthet-nova, serif;
   font-style: normal;
   font-weight: 900; 
 }
 
-.aesthet-nova-h3 {
+.aesthet-nova-h2 {
   font-family: aesthet-nova, serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: x-large;
 }
 
 .video-responsive {
@@ -65,4 +73,13 @@ make container position top right of grainy
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.text-outline-white {
+  color: white;
+  text-shadow: 
+    -1px -1px 0 #F26A36,  
+    1px -1px 0 #F26A36,
+    -1px 1px 0 #F26A36,
+    1px 1px 0 #F26A36;
 }

@@ -3,6 +3,8 @@ import grainy from '../assets/transparentGrainy2.png'
 import { NavLink } from 'react-router-dom'
 // import SpeechBubble from '../components/SpeechBubble'
 import './speechbubble.css'
+import './Style.css'
+
 
 const Home = () => {
   const [showPopup1, setShowPopup1] = useState(false)
@@ -15,7 +17,7 @@ const Home = () => {
     <div className="relative min-h-screen w-screen flex justify-center items-center bg-ingrain-color-background">
 
       {/* Center grainy */}
-      <div className="absolute inset-0 justify-center flex items-center h-screen w-screen"> 
+      <div className="absolute inset-0 justify-center flex items-center h-screen w-screen pt-24"> 
         <img 
           src={grainy} 
           alt="Character" 
@@ -45,7 +47,7 @@ const Home = () => {
             // </div>
             <div className='absolute h-screen flex justify-center items-center left-1/3 -translate-x-1/2'>
               <NavLink to="/about">
-                <p className='speech-bubble aesthet_nova top-left-tail uppercase'>About</p>
+                <p className='speech-bubble aesthet-nova top-left-tail uppercase'>About</p>
               </NavLink>
             </div>
           )}
@@ -80,7 +82,7 @@ const Home = () => {
             // </div>
             <div className='absolute h-screen flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/events">
-                <p className='speech-bubble aesthet_nova top-right-tail uppercase'>Events</p>
+                <p className='speech-bubble aesthet-nova top-right-tail uppercase'>Events</p>
               </NavLink>
             </div>
           )}
@@ -105,7 +107,7 @@ const Home = () => {
             // </div>
             <div className='absolute flex justify-center items-center left-1/4 translate-x-1/4'>
               <NavLink to="/shop">
-                <p className='speech-bubble aesthet_nova bottom-left-tail uppercase'>Shop</p>
+                <p className='speech-bubble aesthet-nova bottom-left-tail uppercase'>Shop</p>
               </NavLink>
             </div>
           )}
@@ -130,7 +132,7 @@ const Home = () => {
             // </div>
             <div className='absolute flex justify-center items-center right-1/4 translate-x-1/5'>
               <NavLink to="/contact">
-                <p className='speech-bubble aesthet_nova bottom-right-tail uppercase'>Contact</p>
+                <p className='speech-bubble aesthet-nova bottom-right-tail uppercase'>Contact</p>
               </NavLink>
             </div>
           )}
