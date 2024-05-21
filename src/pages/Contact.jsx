@@ -138,7 +138,7 @@ const Contact = () => {
           <div className="flex items-center justify-between">
             <button
               type="button"
-              onMouseEnter={handleSubmit}
+              onClick={handleSubmit}
               className="bg-ingrain-color-orange hover:bg-ingrain-color-green text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Send Message
