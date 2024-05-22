@@ -76,10 +76,10 @@ make container position top right of grainy
 }
 
 .text-outline-white {
-  color: white;
-  text-shadow: 
+  color: #F26A36;
+  /* text-shadow: 
     -1px -1px 0 #F26A36,  
     1px -1px 0 #F26A36,
     -1px 1px 0 #F26A36,
-    1px 1px 0 #F26A36;
+    1px 1px 0 #F26A36; */
 }
