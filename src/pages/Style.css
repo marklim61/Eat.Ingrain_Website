@@ -94,3 +94,31 @@ make container position top right of grainy
 .hover-button-color {
   color: #83af9b
 }
+
+.icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item img {
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover .icon-container,
+.carousel-item:hover img {
+  opacity: 1;
+}
+
+.carousel-item:hover img {
+  opacity: 0.5;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  color: white;
+}
