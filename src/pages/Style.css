@@ -1,16 +1,27 @@
+
 .contact-container {
   position: relative; /* Setting the container's position relative to its normal position */
-  justify-content: flex-start; /* Aligning items to the start (left) */
-  align-items: flex-end; /* Aligning items to the bottom */
-  height: 87vh; /* Setting the height of the container to 87% of the viewport height */
+  justify-content: center; /* Aligning items to the start (left) */
+  align-items: center; /* Aligning items to the bottom */
+  height: 108vh; /* Setting the height of the container to 87% of the viewport height */
 }
 
 .form-section {
   z-index: 2; /* Setting the stack order of the form section */
   background-color: ingrain-background-color; /* Setting the background color of the form section */
-  margin-left: 100px; /* Adding margin on the left to move the container more towards the left */
+  margin-left: 10px; /* Adding margin on the left to move the container more towards the left */
   padding: 20px; /* Adding padding inside the form section for better spacing */
   width: 70%; /* Setting the width of the form section to 70% of its parent container */
+}
+
+.right-area {
+  position: absolute; /* Positioning the area absolutely */
+   /* Aligning the top of the area with the top of the container */
+  right: 0; /* Aligning the right of the area with the right of the container */
+  width: 30%; /* Setting the width of the area to 30% of its parent container */
+  height: 90%; /* Setting the height of the area to match the height of the container */
+  background-color: ingrain-background-color; /* Setting a background color for the area */
+  z-index: 1; /* Setting the stack order of the area behind the form section */
 }
 
 /*
@@ -19,13 +30,7 @@ make container position top right of grainy
 
 */
 
-.background-section {
-  z-index: 1; /* Setting the stack order of the background section */
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 87vh;
-  margin-right: 200px;
-}
+
 /* Animation styling */
 .animate-spin-slow {
   animation: spin 10s linear infinite;
