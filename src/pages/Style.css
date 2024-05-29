@@ -60,6 +60,13 @@ make container position top right of grainy
   font-size: x-large;
 }
 
+.aesthet-nova-h3 {
+  font-family: aesthet-nova, serif;
+  font-style: normal;
+  font-weight: 500;
+  /* font-size: x-large; */
+}
+
 .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -75,11 +82,43 @@ make container position top right of grainy
   position: absolute;
 }
 
-.text-outline-white {
-  color: white;
-  text-shadow: 
+/* .text-orange { */
+  /* color: #F26A36; */
+  /* text-shadow: 
     -1px -1px 0 #F26A36,  
     1px -1px 0 #F26A36,
     -1px 1px 0 #F26A36,
-    1px 1px 0 #F26A36;
+    1px 1px 0 #F26A36; */
+/* } */
+
+.hover-button-color {
+  color: #83af9b
+}
+
+.icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item img {
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover .icon-container,
+.carousel-item:hover img {
+  opacity: 1;
+}
+
+.carousel-item:hover img {
+  opacity: 0.5;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  color: white;
 }
