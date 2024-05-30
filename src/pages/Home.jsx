@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom'
 import './speechbubble.css'
 import './Style.css'
 
-
 const Home = () => {
   const [showPopup1, setShowPopup1] = useState(false)
   const [showPopup2, setShowPopup2] = useState(false)

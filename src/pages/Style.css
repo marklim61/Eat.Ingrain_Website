@@ -102,8 +102,25 @@ make container position top right of grainy
   transition: opacity 0.3s ease;
 }
 
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  margin: 0 11px; /* Adjust margin as needed */
+}
+
 .carousel-item img {
   transition: opacity 0.3s ease;
+  max-width: 350px; /* Adjust max-width as needed */
+  max-height: 350px; /* Adjust max-height as needed */
+  width: 265px;
+  height: 350px;
+  border-radius: 8px;
 }
 
 .carousel-item:hover .icon-container,

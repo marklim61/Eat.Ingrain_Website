@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './Style.css'
 import YoutubeEmbed from '../components/YoutubeEmbed'
 // import islandFood from '../assets/islandFoodBG.jpg'
+import images from '../assets/instagram_gallery'
 
 const About = () => {
   // JS function to scroll through the carousel
@@ -19,7 +20,7 @@ const About = () => {
   return (
     <div>
       {/* Brief Info */}
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen bg-cover bg-center">
         <div 
           className="flex items-center bg-ingrain-board-color h-84 w-84 p-24 mt-72 rounded-3xl drop-shadow-2xl"
           style={{
@@ -47,7 +48,7 @@ const About = () => {
         <div className='ml-24 mr-24'>
           <p className='aesthet-nova-h2 mb-4'>Instagram</p>
           <p className='aesthet-nova text-ingrain-color-orange mb-8'>Photo Gallery</p>
-          <p>Lorem ipsum is placeholder text commonly  <br />used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+          <p className='aesthet-nova-h3'>Lorem ipsum is placeholder text commonly  <br />used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
           <a href="https://www.instagram.com/eat.ingrain" target="_blank" rel="noopener noreferrer">
             <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-ingrain-color-orange text-white aesthet-nova-h3 hover:bg-hover-button-color mt-6">View More</button>
           </a>
@@ -58,7 +59,7 @@ const About = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24"><path fill="currentColor" d="m14 17l-5-5l5-5z"/></svg>
         </button>
         {/* Carousel */}
-        <div className="carousel carousel-center p-4 space-x-4 bg-neutral rounded-box w-screen">
+        {/* <div className="carousel carousel-center p-4 space-x-4 bg-neutral rounded-box w-screen">
           <div className="carousel-item relative">
             <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="img1" className="rounded-box" />
             <div className="icon-container">
@@ -122,7 +123,22 @@ const About = () => {
             5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
             </div>
           </div>
+        </div> */}
+
+        {/* Carousel */}
+        <div className="carousel carousel-center p-6 rounded-box w-screen">
+          {images.map((image, index) => (
+            <div key={index} className="carousel-item relative">
+              <img src={image} alt={`Carousel item ${index + 1}`} className="rounded-box max-w-xs" />
+              <div className="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/>
+                </svg>
+              </div>
+            </div>
+          ))}
         </div>
+
         {/* Right Button */}
         <button onClick={() => scrollCarousel('right')} className="btn btn-circle bg-ingrain-color-orange text-white m-4 hover:bg-hover-button-color">
           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17V7l5 5z"/></svg>
@@ -165,7 +181,7 @@ const About = () => {
         <aside className="items-center grid-flow-col">
           <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" className="fill-current">
             <path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
-          <p>INGRAIN LLC<br/>The art of crafting cool food</p>
+          <p className='aesthet-nova-h3'>INGRAIN LLC<br/>The art of crafting cool food</p>
         </aside> 
         <nav className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">
