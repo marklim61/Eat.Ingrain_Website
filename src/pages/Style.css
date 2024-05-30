@@ -72,6 +72,8 @@ make container position top right of grainy
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
+  max-width: 100%;
+  background: #000;
 }
 
 .video-responsive iframe {
@@ -81,15 +83,6 @@ make container position top right of grainy
   width: 100%;
   position: absolute;
 }
-
-/* .text-orange { */
-  /* color: #F26A36; */
-  /* text-shadow: 
-    -1px -1px 0 #F26A36,  
-    1px -1px 0 #F26A36,
-    -1px 1px 0 #F26A36,
-    1px 1px 0 #F26A36; */
-/* } */
 
 .hover-button-color {
   color: #83af9b
