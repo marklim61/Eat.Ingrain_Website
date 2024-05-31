@@ -4,6 +4,7 @@
   justify-content: center; /* Aligning items to the start (left) */
   align-items: center; /* Aligning items to the bottom */
   height: 108vh; /* Setting the height of the container to 87% of the viewport height */
+  
 }
 
 .form-section {
@@ -12,6 +13,7 @@
   margin-left: 10px; /* Adding margin on the left to move the container more towards the left */
   padding: 20px; /* Adding padding inside the form section for better spacing */
   width: 70%; /* Setting the width of the form section to 70% of its parent container */
+  
 }
 
 .right-area {

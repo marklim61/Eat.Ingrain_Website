@@ -9,7 +9,7 @@ import './speechbubble.css';
 //get rid of box container -> work on next
 //text box white-> name, email, message
 //change button to daisyUI -> responsive button
-//make button middle not left side
+//make button middle not left side -> done
 //change font to aesthet nova
 //
 
@@ -54,14 +54,14 @@ const Contact = () => {
   return (
   <div>
     <div className="contact-container flex items-center justify-center bg-ingrain-color-background h-screen">
-      <div className="form-section p-8 rounded shadow-md w-full max-w-md bg-ingrain-color-background">
-        <h2 className="text-2xl font-bold mb-6 text-center text-ingrain-color-orange">Contact Us</h2>
+      <div className="form-section p-8 rounded shadow-md w-full max-w-md bg-ingrain-color-background" >
+        <h2 className="text-2xl font-bold mb-6 text-center text-ingrain-color-orange aesthet-nova-h3">Contact Us</h2>
         <form>
           <div className="mb-4">
-            <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="name">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2 aesthet-nova-h3 " htmlFor="name">
               Name
             </label>
-            <label className="input input-bordered flex items-center gap-2">
+            <label className="input input-bordered flex items-center gap-2 aesthet-nova-h3 bg-white">
               <input
                 type="text"
                 id="name"
@@ -75,10 +75,10 @@ const Contact = () => {
             </label>
           </div>
           <div className="mb-4">
-            <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="email">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2 aesthet-nova-h3" htmlFor="email">
               Email
             </label>
-            <label className="input input-bordered flex items-center gap-2">
+            <label className="input input-bordered flex items-center gap-2 aesthet-nova-h3 bg-white">
               <input
                 type="email"
                 id="email"
@@ -92,7 +92,7 @@ const Contact = () => {
             </label>
           </div>
           <div className="mb-6">
-            <label className="block text-ingrain-color-green text-sm font-bold mb-2" htmlFor="message">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2 aesthet-nova-h3" htmlFor="message">
               Message
             </label>
             <textarea
@@ -100,13 +100,13 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="textarea textarea-bordered w-full"
+              className="textarea textarea-bordered w-full bg-white"
               placeholder="Message"
               rows="5"
               required
             />
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center aesthet-nova-h3">
             <button
               type="button"
               onClick={handleSubmit}
