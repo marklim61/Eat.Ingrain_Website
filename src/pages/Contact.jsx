@@ -5,6 +5,13 @@ import { NavLink } from 'react-router-dom';
 import './Style.css';
 import './speechbubble.css';
 
+//make it responsive to any type of computer: mac, pc, mobile
+//get rid of box container -> work on next
+//text box white-> name, email, message
+//change button to daisyUI -> responsive button
+//make button middle not left side
+//change font to aesthet nova
+//
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,8 +53,6 @@ const Contact = () => {
 
   return (
   <div>
-
-    
     <div className="contact-container flex items-center justify-center bg-ingrain-color-background h-screen">
       <div className="form-section p-8 rounded shadow-md w-full max-w-md bg-ingrain-color-background">
         <h2 className="text-2xl font-bold mb-6 text-center text-ingrain-color-orange">Contact Us</h2>
@@ -101,13 +106,13 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             <button
               type="button"
               onClick={handleSubmit}
               onMouseEnter={() => setIsHovering(true)} // Set hover state to true on mouse enter
               onMouseLeave={() => setIsHovering(false)} // Set hover state to false on mouse leave
-              className="bg-ingrain-color-orange hover:bg-ingrain-color-green text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-ingrain-color-orange hover:bg-ingrain-color-green text-white font-bold rounded focus:outline-none focus:shadow-outline"
             >
               Send Message
             </button>

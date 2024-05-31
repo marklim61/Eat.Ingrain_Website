@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 mt-12">
         <NavLink to="/">
-          <img src={ingrain_Logo} alt="Logo" className="h-32 md:h-full cursor-pointer" />
+          <img src={ingrain_Logo} alt="Logo" className="lg:h-32 md:h-16 sm:h-8 cursor-pointer" />
         </NavLink>
       </div>
   )
