@@ -54,11 +54,10 @@ const Contact = () => {
   return (
   <div>
     <div className="contact-container flex items-center justify-center bg-ingrain-color-background h-screen">
-      <div className="form-section p-8 rounded shadow-md w-full max-w-md bg-ingrain-color-background" >
-        <h2 className="text-2xl font-bold mb-6 text-center text-ingrain-color-orange aesthet-nova-h3">Contact Us</h2>
-        <form>
-          <div className="mb-4">
-            <label className="block text-ingrain-color-green text-sm font-bold mb-2 aesthet-nova-h3 " htmlFor="name">
+        <form style={{ width: '20%' }}>
+          <div className="forum-section text-2xl flex items-center justify-center mb-4 center aesthet-nova-h3 text-ingrain-color-orange">Contact Us</div>
+          < div className="forum-section mb-4">
+            <label className="block text-ingrain-color-green text-sm font-bold mb-2 aesthet-nova-h3" htmlFor="name">
               Name
             </label>
             <label className="input input-bordered flex items-center gap-2 aesthet-nova-h3 bg-white">
@@ -133,7 +132,6 @@ const Contact = () => {
           </div>
         </form>
       </div>
-    </div>
     {/* Footer 1 */}
     <footer className="footer p-10 text-base-content justify-evenly bg-ingrain-board-color">
         <nav>
