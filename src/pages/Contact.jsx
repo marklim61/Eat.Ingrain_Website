@@ -53,7 +53,7 @@ const Contact = () => {
     <div>
       <div className="contact-container flex items-center justify-center bg-ingrain-color-background h-screen">
         <form style={{ width: '20%' }}>
-          <div className="forum-section text-2xl flex items-center justify-center mb-4 center aesthet-nova-h3 text-ingrain-color-orange">Contact Us</div>
+          <div className="forum-section font-bold text-2xl flex items-center justify-center mb-4 center aesthet-nova-h3 text-ingrain-color-orange">Contact Us</div>
           <div className="forum-section mb-4">
             <label className="block text-ingrain-color-green text-sm font-bold mb-2 aesthet-nova-h3" htmlFor="name">
               Name
