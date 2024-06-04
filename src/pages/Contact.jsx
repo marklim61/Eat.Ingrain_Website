@@ -14,6 +14,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isClicked, setIsClicked] = useState(false); // State to track button click
+  const [formError, setFormError] = useState(''); // State to track form errors
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,6 +22,14 @@ const Contact = () => {
 
   const handleSubmit = () => {
     if (isSubmitting) return;
+
+    // Form validation to check to see if all fields are filled out correctly
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormError('All fields are required');
+      return;
+    } else {
+      setFormError('');
+    }
 
     setIsSubmitting(true);
     setIsClicked(true);
@@ -103,6 +112,11 @@ const Contact = () => {
               required
             />
           </div>
+          {formError && (
+            <div className="text-red-500 mb-4">
+              {formError}
+            </div>
+          )}
           <div className="flex items-center justify-center aesthet-nova-h3">
             <button
               type="button"
