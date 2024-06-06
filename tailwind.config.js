@@ -21,7 +21,7 @@ module.exports = {
       'ingrain-color-green': '#227238',
       'ingrain-color-blue': '#0B93F6',
       'ingrain-board-color': '#ECE5CE',
-      'hover-button-color' : '#83af9b'
+      'hover-button-color' : '#143d03'
     },
   },
   plugins: [
