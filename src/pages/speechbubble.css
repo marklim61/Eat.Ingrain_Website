@@ -16,6 +16,24 @@
   /* font-family: "Aesthet Nova", cursive; */
 }
 
+.speech-bubble-mobile {
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+  text-align: center;
+  /* text-transform: uppercase; */
+  font-weight: normal;
+  letter-spacing: 0px;
+  font-size: 10px;
+  color: #774f38;
+  /* background-color: #ece5ce; */
+  background-color: #ECE5CE;
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 8px 8px #83af9b;
+  /* font-family: "Aesthet Nova", cursive; */
+}
+
 .speech-popup {
   transform: translatey(0px);
   animation: float 5s ease-in-out infinite;

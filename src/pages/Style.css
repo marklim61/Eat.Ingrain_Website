@@ -142,3 +142,13 @@ make container position top right of grainy
   height: 50px;
   color: white;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #000; /* Change to your desired color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000; /* Optional: for better visual separation */
+}
