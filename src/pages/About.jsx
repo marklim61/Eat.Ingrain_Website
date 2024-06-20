@@ -123,20 +123,20 @@ const About = () => {
       </div>
       
       {/* Footer 1 */}
-      <footer className="footer p-10 text-base-content justify-evenly bg-ingrain-board-color">
-        <div className="flex flex-row md:flex-row justify-evenly w-full md:space-y-0 space-x-12 md:space-x-96">
-          <nav className="flex flex-col md:flex-col">
+      <footer className="footer p-10 text-base-content bg-ingrain-board-color">
+        <div className="flex flex-row justify-between sm:justify-evenly w-full">
+          <nav className="flex flex-col">
             <h6 className="footer-title">Services</h6>
             <NavLink to="/events" className="link link-hover">Events</NavLink>
             <NavLink className="link link-hover">Catering</NavLink>
             <NavLink to="/shop" className="link link-hover">Shop</NavLink>
           </nav> 
-          <nav className="flex flex-col md:flex-col">
+          <nav className="flex flex-col">
             <h6 className="footer-title">Company</h6> 
             <NavLink to="/about" className="link link-hover">About us</NavLink>
             <NavLink to="/contact" className="link link-hover">Contact</NavLink>
           </nav> 
-          <nav className="flex flex-col md:flex-col">
+          <nav className="flex flex-col">
             <h6 className="footer-title">Legal</h6> 
             <NavLink className="link link-hover">Terms of use</NavLink>
             <NavLink className="link link-hover">Privacy policy</NavLink>
