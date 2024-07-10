@@ -8,7 +8,7 @@ const MobileHome = () => {
 
   return (
     // Put everything in a container
-    <div className="flex justify-center items-center max-h-screen max-w-screen bg-ingrain-color-background">
+    <div className="flex justify-center items-center max-h-screen max-w-screen bg-white">
 
       {/* Center grainy */}
       <div className="inset-0 justify-center flex items-center h-screen pt-12"> 
@@ -16,7 +16,7 @@ const MobileHome = () => {
           src={grainy} 
           alt="Character" 
           width={600} 
-          className="pointer-events-none bg-ingrain-color-background" />
+          className="pointer-events-none bg-white" />
       </div>
       
       {/* Speech Bubbles */}

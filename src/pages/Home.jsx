@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     // Put everything in a container
-    <div className="relative min-h-screen w-screen flex justify-center items-center bg-ingrain-color-background">
+    <div className="relative min-h-screen w-screen flex justify-center items-center bg-white">
 
       {/* Center grainy */}
       <div className="absolute inset-0 justify-center flex items-center h-screen w-screen pt-24"> 
@@ -20,7 +20,7 @@ const Home = () => {
           src={grainy} 
           alt="Character" 
           width={600} 
-          className="pointer-events-none bg-ingrain-color-background" />
+          className="pointer-events-none bg-white" />
       </div>
 
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full mt-16 gap-6">
