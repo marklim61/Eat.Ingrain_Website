@@ -4,5 +4,6 @@ import Events from './Events'
 import Shop from './Shop'
 import Contact from './Contact'
 import MobileHome from './MobileHome'
-
-export { Home, About, Events, Shop, Contact, MobileHome }
+import ProductDetail from './ProductDetail'
+import CartModal from './CartModal'
+export { Home, About, Events, Shop, Contact, MobileHome, ProductDetail, CartModal }
