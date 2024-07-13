@@ -29,9 +29,26 @@ const App = () => {
   const handleCartClose = () => setIsCartOpen(false);
 
   const addToCart = (product, quantity, size) => {
-    const newItem = { ...product, quantity, size };
-    setCartItems([...cartItems, newItem]);
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.id === product.id && item.size === size
+    );
+
+    if (existingItemIndex >= 0) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].quantity += parseInt(quantity);
+      setCartItems(updatedCartItems);
+    } else {
+      const newItem = { ...product, quantity: parseInt(quantity), size };
+      setCartItems([...cartItems, newItem]);
+    }
+
     handleCartOpen();
+  };
+
+  const updateQuantity = (index, quantity) => {
+    const updatedCartItems = [...cartItems];
+    updatedCartItems[index].quantity = quantity;
+    setCartItems(updatedCartItems);
   };
 
   return (
@@ -50,7 +67,7 @@ const App = () => {
         <ConditionalFooter />
         </div>
       </Router>
-      <CartModal isOpen={isCartOpen} onClose={handleCartClose} cartItems={cartItems} />
+      <CartModal isOpen={isCartOpen} onClose={handleCartClose} cartItems={cartItems} updateQuantity={updateQuantity}/>
     </div>
   );
 };

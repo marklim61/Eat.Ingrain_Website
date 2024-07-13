@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       {/* Footer 1 */}
-      <footer className="footer p-10 text-base-content bg-white">
+      <footer className="footer p-6 lighter-border text-base-content bg-ingrain-board-color">
         <div className="flex flex-row justify-between sm:justify-evenly w-full">
           <nav className="flex flex-col">
             <h6 className="footer-title">Services</h6>
@@ -37,7 +37,7 @@ const Footer = () => {
       </footer>
 
       {/* Footer 2 */}
-      <footer className="footer px-10 py-4 border-t text-base-content border-base-300 bg-white">
+      <footer className="footer px-10 py-4 lighter-border text-base-content border-base-300 bg-ingrain-board-color">
         <div className="flex flex-col items-center md:flex-row justify-between w-full">
           <aside className="flex items-center space-x-4 flex-col md:flex-row">
             <svg
