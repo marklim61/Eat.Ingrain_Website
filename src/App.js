@@ -5,7 +5,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { Home, About, Events, Shop, Contact, MobileHome, ProductDetail, CartModal } from "./pages";
+import { Home, About, Events, Shop, Contact, MobileHome, ProductDetail, CartModal, ShoppingCart } from "./pages";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -51,6 +51,12 @@ const App = () => {
     setCartItems(updatedCartItems);
   };
 
+  const removeItem = (index) => {
+    const updatedCartItems = [...cartItems];
+    updatedCartItems.splice(index, 1);
+    setCartItems(updatedCartItems);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Router>
@@ -63,11 +69,18 @@ const App = () => {
             <Route path="/shop" element={<Shop />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/product/:id" element={<ProductDetail addToCart={addToCart}/>} />
+            <Route path="/shoppingcart" element={<ShoppingCart cartItems={cartItems} updateQuantity={updateQuantity} removeItem={removeItem} />} />
           </Routes>
         <ConditionalFooter />
         </div>
       </Router>
-      <CartModal isOpen={isCartOpen} onClose={handleCartClose} cartItems={cartItems} updateQuantity={updateQuantity}/>
+      <CartModal 
+        isOpen={isCartOpen} 
+        onClose={handleCartClose} 
+        cartItems={cartItems} 
+        updateQuantity={updateQuantity}
+        removeItem={removeItem}
+      />
     </div>
   );
 };

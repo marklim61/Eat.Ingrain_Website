@@ -6,4 +6,5 @@ import Contact from './Contact'
 import MobileHome from './MobileHome'
 import ProductDetail from './ProductDetail'
 import CartModal from './CartModal'
-export { Home, About, Events, Shop, Contact, MobileHome, ProductDetail, CartModal }
+import ShoppingCart from './ShoppingCart'
+export { Home, About, Events, Shop, Contact, MobileHome, ProductDetail, CartModal, ShoppingCart }

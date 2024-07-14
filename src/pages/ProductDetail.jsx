@@ -104,7 +104,18 @@ const ProductDetail = ({ addToCart }) => {
                   Select a size to add to Shopping Cart!
                 </Tooltip>
               )}
-              <button onClick={handleBuyNow} className="w-full py-2 rounded mt-1 bg-ingrain-color-orange text-lg">Buy Now</button>
+              <button 
+                onClick={handleBuyNow} 
+                className={`buyNowTooltip w-full py-2 rounded mt-1 text-lg ${selectedSize ? 'bg-ingrain-color-orange' : 'bg-ingrain-color-orange cursor-not-allowed'}`}
+                disabled={!selectedSize}
+              >
+                Buy Now
+              </button>
+              {!selectedSize && (
+                <Tooltip anchorSelect=".buyNowTooltip" place="right">
+                  Select a size to buy!
+                </Tooltip>
+              )}
             </div>
             <div className="collapse collapse-plus">
               <input type="radio" name="my-accordion-3" defaultChecked />

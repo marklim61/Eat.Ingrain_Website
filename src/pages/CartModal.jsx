@@ -1,8 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const CartModal = ({ isOpen, onClose, cartItems, updateQuantity }) => {
+const CartModal = ({ isOpen, onClose, cartItems, updateQuantity, removeItem }) => {
+
   const handleQuantityChange = (index, quantity) => {
     // Ensure quantity is at least 1
     const newQuantity = Math.max(1, quantity);
@@ -43,13 +44,19 @@ const CartModal = ({ isOpen, onClose, cartItems, updateQuantity }) => {
             Cart
           </h2>
         </div>
-        <div className="p-4" style={{ maxHeight: '75vh', overflowY: 'auto' }}>
+        <div className="p-4 overflow-y-auto" style={{ maxHeight: '75vh'}}>
           {cartItems.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (
             <ul>
               {cartItems.map((item, index) => (
-                <li key={index} className="mb-4 flex items-center">
+                <li key={index} className="mb-4 flex items-center border-b last:border-b-0 pb-4 relative">
+                  <button
+                    onClick={() => removeItem(index)}
+                    className="absolute top-0 right-0 p-2 text-gray-500 hover:text-gray-800"
+                  >
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
                   <img
                     src={item.image}
                     alt={item.name}
